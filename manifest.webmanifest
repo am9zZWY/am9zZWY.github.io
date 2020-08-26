@@ -1,0 +1,22 @@
+{
+  "short_name": "jpkmiller",
+  "name": "jpkmiller: make photography great again?",
+  "description": "Everything about jpkmiller",
+  "icons": [
+    {
+      "src": "/dist/favicon.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/dist/favicon_big.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "white",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "white"
+}
