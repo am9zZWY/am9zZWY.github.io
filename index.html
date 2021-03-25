@@ -1,1 +1,46 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content=white><link rel=icon href=/favicon.png><link rel=apple-touch-icon href=/favicon_big.png><title>jpkmiller.de</title><link href=/css/chunk-44936a41.9d121ff0.css rel=prefetch><link href=/css/chunk-5158a70f.33dd38d5.css rel=prefetch><link href=/js/chunk-44936a41.9fd61ea0.js rel=prefetch><link href=/js/chunk-5158a70f.b7dfef73.js rel=prefetch><link href=/css/app.8adbfdc7.css rel=preload as=style><link href=/css/chunk-vendors.7eff5ff1.css rel=preload as=style><link href=/js/app.e7269616.js rel=preload as=script><link href=/js/chunk-vendors.32f42b40.js rel=preload as=script><link href=/css/chunk-vendors.7eff5ff1.css rel=stylesheet><link href=/css/app.8adbfdc7.css rel=stylesheet></head><body><script src=https://assets.juicer.io/embed.js></script><noscript><strong>We're sorry but jpkmiller.de doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.32f42b40.js></script><script src=/js/app.e7269616.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=theme-color content=white>
+    <meta name="author" content="Josef">
+    <link rel=icon href=/favicon.png>
+    <link rel=apple-touch-icon href=/favicon_big.png>
+    <title>I am Josef.</title>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <h2>My name is
+        <span class="highlight"></span>.
+    </h2>
+    <p id="about">
+        I am a student in software engineering at the <a href="https://www.htwg-konstanz.de" target="_blank"
+            rel="noopener">HTWG</a> at the Lake of Constance.<br>
+        In my free time I love to write small programs and websites like this.<br>
+        I love solving problems by coding automated programs and algorithms and fine-tuning them till they perform
+        impressively.
+    </p>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .highlight::after {
+            content: 'Josef';
+            color: white;
+            background: #ff9000;
+        }
+
+        .highlight:hover::after {
+            content: ' Müller'
+        }
+    </style>
+</body>
+
+</html>
