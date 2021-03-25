@@ -16,7 +16,7 @@
 <body>
     <h1>Hello!</h1>
     <h2>My name is
-        <span class="highlight"></span>.
+        <span class="highlight1"></span>.
     </h2>
     <p id="about">
         I am a student in software engineering at the <a href="https://www.htwg-konstanz.de" target="_blank"
@@ -27,18 +27,25 @@
     </p>
 
     <style>
+
+        body {
+            font-size: 2.5em;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 28em;
+        }
         a {
             text-decoration: none;
             color: inherit;
         }
 
-        .highlight::after {
+        .highlight1:after {
             content: 'Josef';
             color: white;
             background: #ff9000;
         }
 
-        .highlight:hover::after {
+        .highlight1:hover::after {
             content: ' Müller'
         }
     </style>
