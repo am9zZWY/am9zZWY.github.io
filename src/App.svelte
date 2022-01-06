@@ -62,4 +62,11 @@
         color: black;
     }
 
+    .portrait {
+        border-radius: 50%;
+        margin: 20px;
+        width: 23vw;
+        height: 23vw;
+    }
+
 </style>
