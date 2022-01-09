@@ -26,9 +26,10 @@
         border-color: #333333;
         border-style: solid;
         padding: 10px;
-        width: 50%;
+        width: 15em;
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-right: 10px;
     }
 
     .card-title {
