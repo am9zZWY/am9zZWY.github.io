@@ -1,10 +1,10 @@
 <nav role="navigation" aria-label="main navigation">
     <ul class="nav-ul">
         <li class="nav-li">
-            <a href="/#about">About Me</a>
+            <a href="#about">About Me</a>
         </li>
         <li class="nav-li">
-            <a href="https://github.com/jpkmiller" target="_blank">Projects</a>
+            <a href="#projects">Projects</a>
         </li>
     </ul>
 </nav>
