@@ -1,23 +1,27 @@
 <script>
     import Nav from "./components/Nav.svelte";
     import Projects from "./components/Projects.svelte";
+
     console.log('66c28bfe@protonmail.com')
 </script>
 
 <main>
     <Nav/>
     <section class="section" id="about" role="contentinfo" aria-label="section" aria-labelledby="About Josef Müller">
+        <h1 aria-labelledby="greeting">
+            Hello!
+        </h1>
         <div class="container">
             <div>
-                <h1 aria-labelledby="greeting">
-                    Hello!
-                </h1>
-                <h3 aria-labelledby="introduction">
+                <h3 aria-labelledby="introduction" class="introduction">
                     My name is Josef Müller.
                 </h3>
+
                 <p class="text">
-                    I study Applied Computer Science with focus on Embedded Systems at the HTWG Konstanz. In my spare time I work on small projects and like to experiment with new technologies.
-                    My interests lie especially in the frontend area, where I like to work with frameworks like Vue and Svelte.
+                    I study Applied Computer Science with focus on Embedded Systems at the HTWG Konstanz. In my spare
+                    time I work on small projects and like to experiment with new technologies.
+                    My interests lie especially in the frontend area, where I like to work with frameworks like Vue and
+                    Svelte.
                     Furthermore I write projects in Python, Scala, Java and C from time to time.
                 </p>
                 <p class="text">
@@ -26,11 +30,22 @@
                     contact me.
                 </p>
             </div>
-            <img class="img portrait" alt="Portrait of Josef" src="https://avatars.githubusercontent.com/u/46693545?v=4"/>
+            <div class="container portrait">
+                <h3 aria-labelledby="introduction on small device" class="introduction-small-device">
+                    My name is Josef Müller.
+                </h3>
+                <img class="img portrait" alt="Portrait of Josef"
+                     src="https://avatars.githubusercontent.com/u/46693545?v=4"/>
+            </div>
         </div>
     </section>
-    <section class="section" id="projects" role="contentinfo" aria-label="section" aria-labelledby="Projects of Josef Müller">
-        <Projects />
+    <section class="section" id="projects" role="contentinfo" aria-label="section"
+             aria-labelledby="Projects of Josef Müller">
+        <h1>My GitHub Projects</h1>
+        <div class="container">
+            <Projects githubName={'jpkmiller'}/>
+            <Projects githubName={'htwg-app'}/>
+        </div>
     </section>
 </main>
 
@@ -58,6 +73,31 @@
         display: flex;
     }
 
+    .introduction-small-device {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .container.portrait {
+            flex-direction: row;
+            align-items: center;
+            align-self: center;
+            width: 100%;
+        }
+
+        .container {
+            flex-direction: column-reverse;
+        }
+
+        .introduction {
+            display: none;
+        }
+
+        .introduction-small-device {
+            display: inline;
+        }
+    }
+
     :global(a, a:visited) {
         color: black;
     }
@@ -65,8 +105,8 @@
     .portrait {
         border-radius: 50%;
         margin: 20px;
-        width: 23vw;
-        height: 23vw;
+        width: 20vw;
+        height: 20vw;
     }
 
 </style>
