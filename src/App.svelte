@@ -18,16 +18,15 @@
                 </h3>
 
                 <p class="text">
-                    I study Applied Computer Science with focus on Embedded Systems at the HTWG Konstanz. In my spare
-                    time I work on small projects and like to experiment with new technologies.
+                    I study <span class="keyword">Applied Computer Science</span> with focus on Embedded Systems at the HTWG Konstanz. In my spare
+                    time I work on small projects and like to experiment with new technologies.<br/>
                     My interests lie especially in the frontend area, where I like to work with frameworks like Vue and
                     Svelte.
-                    Furthermore I write projects in Python, Scala, Java and C from time to time.
+                    Furthermore I write projects in PHP, Python, Scala, Java and C from time to time.
                 </p>
                 <p class="text">
                     If you are interested in starting something with me or you have questions about a project feel free
-                    to
-                    contact me.
+                    to <span class="keyword">contact me</span>.
                 </p>
             </div>
             <div class="container portrait">
@@ -50,6 +49,13 @@
 </main>
 
 <style>
+    :root {
+        --primary-color: #fb8500;
+        --secondary-color: #219ebc;
+        --dark-color: #023047;
+        --light-color: #ffb703;
+    }
+
     main {
         text-align: left;
         max-width: none;
@@ -66,6 +72,12 @@
 
     .text {
         line-height: 35px;
+    }
+
+    :global(.keyword) {
+        background: var(--primary-color);
+        margin: 5px;
+        padding: 2px;
     }
 
     .container {
