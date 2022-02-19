@@ -11,12 +11,12 @@
 
 <style>
     nav {
-        border: thin solid;
-        background: white;
+        background: var(--light-color);
     }
 
     .nav-ul {
-        padding: 0;
+        margin: 5px;
+        padding: 2px;
         display: flex;
         justify-content: space-evenly;
     }
