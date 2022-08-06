@@ -21,15 +21,14 @@
 
 <style>
     .card {
-        border-radius: 10px;
-        border-width: 1px;
-        border-color: #333333;
-        border-style: solid;
         padding: 10px;
-        width: 15em;
+        max-width: 300px;
+        width: 300px;
         margin-top: 10px;
         margin-bottom: 10px;
         margin-right: 10px;
+        background: var(--light-color);
+        color: black;
     }
 
     .card-title {
@@ -40,7 +39,7 @@
 
     .card-subtitle {
         font-size: medium;
-        color: lightgray;
+        color: black;
     }
 
     .card-description {

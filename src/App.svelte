@@ -2,20 +2,22 @@
     import Nav from "./components/Nav.svelte";
     import Projects from "./components/Projects.svelte";
 
-    console.log('66c28bfe@protonmail.com')
+	const openMail = () => {
+		window.location.href = "mailto:hohlraeume_haushalte0k@icloud.com"
+    }
 </script>
 
 <main>
     <Nav/>
     <section class="section" id="about" role="contentinfo" aria-label="section" aria-labelledby="About Josef Müller">
-        <h1 aria-labelledby="greeting">
+        <h1 class="greeting" aria-labelledby="greeting">
             Hello!
         </h1>
         <div class="container">
             <div>
-                <h3 aria-labelledby="introduction" class="introduction">
+                <h1 aria-labelledby="introduction" class="section-title">
                     My name is Josef Müller.
-                </h3>
+                </h1>
 
                 <p class="text">
                     I study <span class="keyword">Applied Computer Science</span> with focus on Embedded Systems at the HTWG Konstanz. In my spare
@@ -26,21 +28,14 @@
                 </p>
                 <p class="text">
                     If you are interested in starting something with me or you have questions about a project feel free
-                    to <span class="keyword">contact me</span>.
+                    to <a class="keyword" on:click={openMail}>contact me</a>.
                 </p>
-            </div>
-            <div class="container portrait">
-                <h3 aria-labelledby="introduction on small device" class="introduction-small-device">
-                    My name is Josef Müller.
-                </h3>
-                <img class="img portrait" alt="Portrait of Josef"
-                     src="https://avatars.githubusercontent.com/u/46693545?v=4"/>
             </div>
         </div>
     </section>
     <section class="section" id="projects" role="contentinfo" aria-label="section"
              aria-labelledby="Projects of Josef Müller">
-        <h1>My GitHub Projects</h1>
+        <h1 class="section-title">My GitHub Projects</h1>
         <div class="container">
             <Projects githubName={'jpkmiller'}/>
             <Projects githubName={'htwg-app'}/>
@@ -50,24 +45,21 @@
 
 <style>
     :root {
-        --primary-color: #fb8500;
-        --secondary-color: #219ebc;
-        --dark-color: #023047;
-        --light-color: #ffb703;
+        --primary-color: #52796f;
+        --secondary-color: #84a98c;
+        --dark-color: #2f3e46;
+        --light-color: #B8BFB3;
+        --bg-color: #EAEDE8;
     }
 
     main {
         text-align: left;
         max-width: none;
         padding: 1em;
-        margin: 0 auto;
+        margin: 0 15%;
         font-size: x-large;
-    }
-
-    @media (max-width: 100px) {
-        main {
-            font-size: xx-small;
-        }
+        background: var(--bg-color);
+        transition: ease all 1s;;
     }
 
     .text {
@@ -76,8 +68,15 @@
 
     :global(.keyword) {
         background: var(--primary-color);
+        color: white;
         margin: 5px;
         padding: 2px;
+    }
+
+    .greeting {
+        font-size: 60pt;
+        font-weight: bold;
+        color: var(--primary-color);
     }
 
     .container {
@@ -85,40 +84,36 @@
         display: flex;
     }
 
-    .introduction-small-device {
-        display: none;
+    .section-title {
+        font-size: 30pt;
+        font-weight: bold;
+        color: var(--dark-color);
     }
 
-    @media (max-width: 600px) {
-        .container.portrait {
-            flex-direction: row;
-            align-items: center;
-            align-self: center;
-            width: 100%;
-        }
-
-        .container {
-            flex-direction: column-reverse;
-        }
-
-        .introduction {
-            display: none;
-        }
-
-        .introduction-small-device {
-            display: inline;
-        }
+    .section {
+        margin-top: 20px;
     }
 
     :global(a, a:visited) {
         color: black;
     }
 
-    .portrait {
-        border-radius: 50%;
-        margin: 20px;
-        width: 20vw;
-        height: 20vw;
+    @media (max-width: 1020px) {
+        .container {
+            flex-direction: column-reverse;
+        }
     }
 
+    @media (max-width: 820px) {
+        main {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        main {
+            width: 350px;
+            margin: auto;
+        }
+    }
 </style>
