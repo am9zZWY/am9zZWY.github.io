@@ -1,10 +1,10 @@
 <script>
-    import Nav from "./components/Nav.svelte";
-    import Projects from "./components/Projects.svelte";
+	import Nav from "./components/Nav.svelte";
+	import Projects from "./components/Projects.svelte";
 
 	const openMail = () => {
 		window.location.href = "mailto:hohlraeume_haushalte0k@icloud.com"
-    }
+	}
 </script>
 
 <main>
@@ -20,7 +20,8 @@
                 </h1>
 
                 <p class="text">
-                    I study <span class="keyword">Applied Computer Science</span> with focus on Embedded Systems at the HTWG Konstanz. In my spare
+                    I study <span class="keyword">Applied Computer Science</span> with focus on Embedded Systems at the
+                    HTWG Konstanz. In my spare
                     time I work on small projects and like to experiment with new technologies.<br/>
                     My interests lie especially in the frontend area, where I like to work with frameworks like Vue and
                     Svelte.
@@ -49,15 +50,23 @@
         --secondary-color: #84a98c;
         --dark-color: #2f3e46;
         --light-color: #B8BFB3;
-        --bg-color: #EAEDE8;
+        --bg-color: #F5F6F4;
+        --font-max: 48pt;
+        --font-medium: 32pt;
+        --font-text: 20pt;
+        --font-small: 12pt;
+        --big-space: 40px;
+        --medium-space: 25px;
+        --small-space: 15px;
+        --tiny-space: 5px;
     }
 
     main {
         text-align: left;
         max-width: none;
-        padding: 1em;
+        padding: var(--medium-space);
         margin: 0 15%;
-        font-size: x-large;
+        font-size: var(--font-text);
         background: var(--bg-color);
         transition: ease all 1s;;
     }
@@ -69,29 +78,29 @@
     :global(.keyword) {
         background: var(--primary-color);
         color: white;
-        margin: 5px;
-        padding: 2px;
+        margin: var(--tiny-space);
+        padding: var(--tiny-space);
     }
 
     .greeting {
-        font-size: 60pt;
+        font-size: var(--font-max);
         font-weight: bold;
         color: var(--primary-color);
     }
 
     .container {
-        margin-top: 20px;
+        margin-top: var(--medium-space);
         display: flex;
     }
 
     .section-title {
-        font-size: 30pt;
+        font-size: var(--font-medium);
         font-weight: bold;
         color: var(--dark-color);
     }
 
     .section {
-        margin-top: 20px;
+        margin-top: var(--medium-space);
     }
 
     :global(a, a:visited) {

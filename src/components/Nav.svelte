@@ -15,8 +15,8 @@
     }
 
     .nav-ul {
-        margin: 5px;
-        padding: 2px;
+        margin: 0;
+        padding-inline: var(--medium-space) 0;
         display: flex;
         justify-content: space-evenly;
     }
@@ -41,14 +41,15 @@
         }
 
         .nav-li {
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: 0;
+            margin-right: var(--medium-space);
         }
     }
 
     li {
         list-style: none;
-        margin: auto;
+        margin: 0;
+        padding: 0;
     }
 
 </style>

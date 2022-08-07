@@ -21,30 +21,29 @@
 
 <style>
     .card {
-        padding: 10px;
         max-width: 300px;
         width: 300px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 10px;
+        padding: var(--medium-space);
+        margin: var(--small-space);
+        margin-left: 0;
         background: var(--light-color);
         color: black;
     }
 
     .card-title {
-        font-size: x-large;
+        font-size: var(--font-text);
         margin-top: 5px;
         margin-bottom: 5px;
     }
 
     .card-subtitle {
-        font-size: medium;
+        font-size: var(--font-small);
         color: black;
     }
 
     .card-description {
         margin-top: 5px;
         margin-bottom: 5px;
-        font-size: medium;
+        font-size: var(--font-small);
     }
 </style>
