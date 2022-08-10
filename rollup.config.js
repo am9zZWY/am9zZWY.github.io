@@ -6,6 +6,7 @@ import {terser} from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import {obfuscator} from "rollup-obfuscator";
 import {fetchinJect} from "./src/rollupFetchinJect.js";
+import dotenv from "rollup-plugin-dotenv";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -48,6 +49,8 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({output: 'bundle.css'}),
+
+		dotenv(),
 
 		fetchinJect(),
 
