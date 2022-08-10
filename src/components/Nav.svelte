@@ -1,4 +1,4 @@
-<nav role="navigation" aria-label="main navigation">
+<nav aria-label="main navigation">
     <ul class="nav-ul">
         <li class="nav-li">
             <a href="#about">About Me</a>

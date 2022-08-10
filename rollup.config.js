@@ -53,18 +53,15 @@ export default {
 		css({output: 'bundle.css'}),
 
 		replace({
-			GITHUB_TOKEN: process.env.GITHUB_TOKEN
+			SECRET: process.env.GITHUB_TOKEN
 		}),
 
 		fetchinJect(),
 
 		// obfuscate code
 		obfuscator({
-			splitStrings: true,
 			numbersToExpressions: true,
 			stringArrayIndexShift: true,
-			stringArrayRotate: true,
-			stringArrayShuffle: true,
 			simplify: true,
 			debugProtection: true,
 			target: 'browser',
