@@ -30,7 +30,9 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run gh-pages
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.0
