@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import {terser} from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import {obfuscator} from "rollup-obfuscator";
+import {fetchinJect} from "./src/rollupFetchinJect.js";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -48,9 +49,19 @@ export default {
 		// a separate file - better for performance
 		css({output: 'bundle.css'}),
 
+		fetchinJect(),
+
 		// obfuscate code
 		obfuscator({
-			splitStrings: true
+			splitStrings: true,
+			numbersToExpressions: true,
+			stringArrayIndexShift: true,
+			stringArrayRotate: true,
+			stringArrayShuffle: true,
+			simplify: true,
+			debugProtection: true,
+			target: 'browser',
+			deadCodeInjection: true,
 		}),
 
 		// If you have external dependencies installed from
