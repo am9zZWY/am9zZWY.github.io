@@ -8,7 +8,7 @@
 	fetch(`https://api.github.com/users/${githubName}/repos`, {
 			method: 'GET',
 			headers: {
-				Authorization: 'token ' + process.env.TOKEN
+				Authorization: 'token ' + process.env.GITHUB_TOKEN
 			}
 		}
 	)
