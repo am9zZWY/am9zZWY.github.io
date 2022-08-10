@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "gh-pages": "NODE_ENV=${{ GITHUB_TOKEN }} rollup -c",
+    "gh-pages": "NODE_ENV=${{ secrets.GITHUB_TOKEN }} rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --dev --port 8080"
   },
