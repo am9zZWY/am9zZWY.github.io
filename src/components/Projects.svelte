@@ -8,7 +8,7 @@
 	fetch(`https://api.github.com/users/${githubName}/repos`, {
 			method: 'GET',
 			headers: {
-				'Authorization': 'token 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'
+				Authorization: 'token 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'
 			}
 		}
 	)
