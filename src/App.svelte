@@ -39,7 +39,6 @@
         <h1 class="section-title">My GitHub Projects</h1>
         <div class="container">
             <Projects githubName={'jpkmiller'}/>
-            <Projects githubName={'htwg-app'}/>
         </div>
     </section>
 </main>
