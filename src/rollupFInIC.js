@@ -40,7 +40,7 @@ async function replaceFetch(node, code, variableMap) {
 		if (type.includes('json')) {
 			const json = await response.json();
 			const jsonString = JSON.stringify(json);
-			replacedCode = code.replace(`${fetchAsString}`, `new Promise((resolve) => { resolve(new Response('${jsonString}')) } )`);
+			replacedCode = replacedCode.replace(`${fetchAsString}`, `new Promise((resolve) => { resolve(new Response('${jsonString}')) } )`);
 		}
 	}
 	return replacedCode;
