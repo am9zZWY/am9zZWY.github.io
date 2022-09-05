@@ -38,7 +38,7 @@
              aria-labelledby="Projects of Josef Müller">
         <h1 class="section-title">My GitHub Projects</h1>
         <div class="container">
-            <Projects githubName={'jpkmiller'}/>
+            <Projects/>
         </div>
     </section>
 </main>

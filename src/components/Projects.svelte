@@ -2,12 +2,12 @@
 	import ProjectCard from "./ProjectCard.svelte";
 
 	export let excludedLanguages = ['', 'CSS'];
-	export let githubName = 'jpkmiller';
 
 	let fetchedRepos = [];
-	fetch(`https://api.github.com/users/${githubName}/repos`, {
+	fetch('https://api.github.com/users/am9zZWY/repos', {
 			method: 'GET',
 			headers: {
+				Accept: 'application/vnd.github.v3+json',
 				Authorization: 'token SECRET'
 			}
 		}
