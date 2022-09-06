@@ -7,11 +7,24 @@
             <a href="#projects">Projects</a>
         </li>
     </ul>
+    <ul class="nav-ul">
+        <li class="nav-li">
+            <a href="https://www.linkedin.com/in/josefmüller"><i class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li class="nav-li">
+            <a href="https://github.com/am9zZWY"><i class="fa-brands fa-github"></i></a>
+        </li>
+        <li class="nav-li">
+            <a href="https://www.xing.com/profile/Josef_Mueller253"><i class="fa-brands fa-square-xing"></i></a>
+        </li>
+    </ul>
 </nav>
 
 <style>
     nav {
         background: var(--light-color);
+        display: flex;
+        justify-content: space-between;
     }
 
     .nav-ul {
