@@ -4,11 +4,10 @@ import {attachScopes, createFilter} from '@rollup/pluginutils';
 import {walk} from 'estree-walker';
 
 function updateVariableMap(node, varMap) {
-	if (varMap === null) {
+	if (null === varMap) {
 		varMap = {};
 	}
-
-	if (node.type === 'AssignmentPattern' && node.left.type === 'Identifier') {
+	if ('AssignmentPattern' === node.type && 'Identifier' === node.left.type && node.right.value !== undefined) {
 		varMap[node.left.name] = node.right.value;
 	}
 }
@@ -17,7 +16,7 @@ async function replaceFetch(node, code, variableMap) {
 	let replacedCode = code;
 
 	/* find fetch expression */
-	if (node.type === 'CallExpression' && node.callee.type === 'Identifier' && node.callee.name === 'fetch') {
+	if ('CallExpression' === node.type && 'Identifier' === node.callee.type && 'fetch' === node.callee.name) {
 		const start = node.start;
 		const end = node.end;
 
@@ -27,14 +26,20 @@ async function replaceFetch(node, code, variableMap) {
 		const fetchAsString = replacedCode.substring(start, end);
 		let fetchAsStringFlatten = fetchAsString.replace(/\r\n|\n|\r/gm, '');
 		const fetchUrl = node.arguments[0];
-		if (fetchUrl.type === 'TemplateLiteral' && 0 < fetchUrl.expressions?.length) {
+		if ('TemplateLiteral' === fetchUrl.type && 0 < fetchUrl.expressions?.length) {
 			fetchUrl.expressions.forEach(identifier => {
 				fetchAsStringFlatten = fetchAsStringFlatten.replace(`$\{${identifier.name}\}`, variableMap[identifier.name]);
 			});
 		}
 
 		/* call fetch */
-		const response = await eval(fetchAsStringFlatten);
+		let response
+		try {
+			response = await eval(fetchAsStringFlatten);
+		} catch (err) {
+			console.debug('Failed to fetch');
+			return replacedCode;
+		}
 		const type = response.headers.get("content-type");
 
 		if (type.includes('json')) {
