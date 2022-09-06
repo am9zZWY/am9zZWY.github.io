@@ -19,17 +19,20 @@
 							 archived,
 							 language
 						 }) => !archived && language !== null && !excludedLanguages.includes(language))
-				.map(({name, full_name, description, html_url}) => ({
-					fullName: full_name,
-					name: name,
-					description: description,
-					url: html_url
-				}))
 		)
 </script>
 
-<div>
+<div class="projects">
     {#each fetchedRepos as repo }
-        <ProjectCard {...repo}/>
+        <ProjectCard repo={repo}/>
     {/each}
 </div>
+
+<style>
+    .projects {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+</style>
