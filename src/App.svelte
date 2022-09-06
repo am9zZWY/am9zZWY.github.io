@@ -58,6 +58,7 @@
         --medium-space: 25px;
         --small-space: 15px;
         --tiny-space: 5px;
+        --border-radius: 5px;
     }
 
     main {
@@ -79,6 +80,7 @@
         color: white;
         margin: var(--tiny-space);
         padding: var(--tiny-space);
+        border-radius: var(--border-radius);
     }
 
     .greeting {
@@ -103,7 +105,7 @@
     }
 
     :global(a, a:visited) {
-        color: black;
+        color: var(--dark-color);
     }
 
     @media (max-width: 1020px) {
