@@ -20,7 +20,8 @@
                 </h1>
 
                 <p class="text">
-                    I study <span class="keyword">Applied Computer Science</span> with focus on Embedded Systems at the
+                    I am studying <span class="keyword">Computer Science</span> in the Master's programme at the Eberhard Karls University in Tübingen.
+		    Before that, I studied Applied Computer Science with focus on Embedded Systems in the Bachelor's programme at the
                     HTWG Konstanz. In my spare
                     time I work on small projects and like to experiment with new technologies.<br/>
                     My interests lie especially in the frontend area, where I like to work with frameworks like Vue and
