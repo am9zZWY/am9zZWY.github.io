@@ -4,21 +4,16 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no'>
-
     <title>Josef Müller</title>
     <link rel="icon" type="image/png" href="./favicon.png">
-
     <script src="https://kit.fontawesome.com/f9e14ecf64.js" crossorigin="anonymous" async></script>
 
     <style>
-        html,
-        body {
+        body,
+        html {
             position: relative;
             width: 100%;
             height: 100%;
-        }
-
-        body {
             color: #333;
             margin: 0;
             padding: 8px;
@@ -79,7 +74,6 @@
             border-color: #666;
         }
 
-
         :root {
             --primary-color: #52796f;
             --secondary-color: #84a98c;
@@ -105,7 +99,6 @@
             font-size: var(--font-text);
             background: var(--bg-color);
             transition: ease all 1s;
-            ;
         }
 
         @media (max-width: 600px) {
@@ -154,13 +147,11 @@
             margin-top: var(--medium-space);
         }
 
-        a, a:visited {
-            color: var(--dark-color);
+        a,
+        a:visited {
+            color: inherit;
         }
-    </style>
 
-    <!-- Navigation -->
-    <style>
         nav {
             width: 100%;
             background: var(--light-color);
@@ -180,14 +171,12 @@
             margin-right: var(--medium-space);
         }
 
-        /* when screen is very very small */
         @media (max-width: 160px) {
             .nav-ul {
                 display: none;
             }
         }
 
-        /* change to list */
         @media (max-width: 280px) {
             .nav-ul {
                 flex-direction: column;
@@ -206,15 +195,11 @@
             padding: 0;
         }
     </style>
+</head>
 
 <body>
     <main>
         <nav aria-label="main navigation">
-            <ul class="nav-ul">
-                <li class="nav-li">
-                    <a href="#about">Hi</a>
-                </li>
-            </ul>
             <ul class="nav-ul">
                 <li class="nav-li">
                     <a href="https://www.linkedin.com/in/josefmüller"><i class="fa-brands fa-linkedin"></i></a>
@@ -239,13 +224,15 @@
                     </h1>
 
                     <p class="text">
-                        I'm currently pursuing a degree in <span class="keyword">Computer Science</span>.
-                        During my free time, I enjoy diving into various small-scale projects and pushing the boundaries
-                        with emerging technologies. <br />
-                        My passion lies in the realm of frontend development. I find great joy in crafting
-                        dynamic interfaces using frameworks such as Vue and Svelte. Additionally, I occasionally delve
-                        into backend technologies, employing languages like PHP, Python, Scala, Java, and C to bring
-                        projects to life.
+                        I'm currently pursuing a degree in <span class="keyword">Computer Science</span>. When I'm not
+                        in class, you can usually find me working on all sorts of small projects and getting my hands
+                        dirty with the latest tech trends. 😎
+                    </p>
+                    <p class="text">
+                        I'm super into frontend development, especially using frameworks like Vue and Svelte to
+                        create dynamic interfaces. Plus, I dabble in the backend too, using languages like Go,
+                        PHP and Java to make things come alive! 🚀
+                        Explore my projects on <span class="keyword"><a href="https://github.com/am9zZWY">GitHub</a></span> to see what I've been working on!
                     </p>
                     <p class="text">
                         If you are interested in starting something with me or you have questions about a project feel
