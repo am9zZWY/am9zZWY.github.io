@@ -1,247 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1,user-scalable=no'>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,user-scalable=no"
+    />
     <title>Josef Müller</title>
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <script src="https://kit.fontawesome.com/f9e14ecf64.js" crossorigin="anonymous" async></script>
+    <link rel="icon" type="image/png" href="/icons/favicon.png" />
 
     <style>
-        body,
-        html {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            color: #333;
-            margin: 0;
-            padding: 8px;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        }
+      :root {
+        --primary-color: #d2a97b; /* Warm, Muted Beige */
+        --secondary-color: #dec098; /* Soft Sand */
+        --accent-color: #173464; /* Deep Navy for contrast */
+        --dark-color: #173464; /* Also using the navy here for text or strong contrast */
+        --light-color: #f5edd2; /* Light Cream for subtle highlights */
+        --bg-color: white;
+        --gradient-color: linear-gradient(135deg, #f5edd2, #d2a97b);
 
-        a {
-            color: rgb(0, 100, 200);
-            text-decoration: none;
-        }
+        /* Font Sizes */
+        --font-max: 48pt;
+        --font-medium: 32pt;
+        --font-text: 20pt;
+        --font-small: 12pt;
 
-        a:hover {
-            text-decoration: underline;
-        }
+        /* Spacing */
+        --big-space: 40px;
+        --medium-space: 25px;
+        --small-space: 15px;
+        --tiny-space: 5px;
 
-        a:visited {
-            color: rgb(0, 80, 160);
-        }
+        /* Border Radius */
+        --border-radius: 10px;
+      }
 
-        label {
-            display: block;
-        }
+      body,
+      html {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 8px;
+        box-sizing: border-box;
+        color: #333;
+        background-color: var(--bg-color);
+      }
 
-        input,
-        button,
-        select,
-        textarea {
-            font-family: inherit;
-            font-size: inherit;
-            -webkit-padding: 0.4em 0;
-            padding: 0.4em;
-            margin: 0 0 0.5em 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 2px;
-        }
+      main {
+        padding: var(--big-space);
+        margin: 0 10%;
+        font-size: var(--font-text);
+        background: var(--bg-color);
+        border: 1px solid var(--light-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.5s ease;
+      }
 
-        input:disabled {
-            color: #ccc;
-        }
+      .text {
+        line-height: 1.6;
+        color: var(--dark-color);
+      }
 
-        button {
-            color: #333;
-            background-color: #f4f4f4;
-            outline: none;
-        }
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
 
-        button:disabled {
-            color: #999;
-        }
+      a:hover {
+        color: var(--secondary-color);
+      }
 
-        button:not(:disabled):active {
-            background-color: #ddd;
-        }
+      .greeting {
+        font-size: var(--font-max);
+        font-weight: bold;
+        color: var(--accent-color);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      }
 
-        button:focus {
-            border-color: #666;
-        }
+      .section-title {
+        font-size: var(--font-medium);
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: var(--small-space);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: var(--tiny-space);
+      }
 
-        :root {
-            --primary-color: #52796f;
-            --secondary-color: #84a98c;
-            --dark-color: #2f3e46;
-            --light-color: #B8BFB3;
-            --bg-color: #F5F6F4;
-            --font-max: 48pt;
-            --font-medium: 32pt;
-            --font-text: 20pt;
-            --font-small: 12pt;
-            --big-space: 40px;
-            --medium-space: 25px;
-            --small-space: 15px;
-            --tiny-space: 5px;
-            --border-radius: 5px;
-        }
+      .container {
+        margin-top: var(--medium-space);
+        display: flex;
+        gap: var(--small-space);
+      }
 
+      .nav-ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: var(--small-space);
+      }
+
+      .nav-li img {
+        width: 24px;
+        height: 24px;
+        transition: opacity 0.3s, transform 0.3s;
+      }
+
+      .nav-li img:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 600px) {
         main {
-            text-align: left;
-            max-width: none;
-            padding: var(--medium-space);
-            margin: 0 15%;
-            font-size: var(--font-text);
-            background: var(--bg-color);
-            transition: ease all 1s;
-        }
-
-        @media (max-width: 600px) {
-            main {
-                width: 320px;
-                margin: auto;
-            }
-        }
-
-        .text {
-            line-height: 35px;
-        }
-
-        .keyword {
-            background: var(--primary-color);
-            color: white;
-            margin: var(--tiny-space);
-            padding: var(--tiny-space);
-            border-radius: var(--border-radius);
-        }
-
-        .greeting {
-            font-size: var(--font-max);
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .container {
-            margin-top: var(--medium-space);
-            display: flex;
-        }
-
-        @media (max-width: 1020px) {
-            .container {
-                flex-direction: column-reverse;
-            }
-        }
-
-        .section-title {
-            font-size: var(--font-medium);
-            font-weight: bold;
-            color: var(--dark-color);
-        }
-
-        .section {
-            margin-top: var(--medium-space);
-        }
-
-        a,
-        a:visited {
-            color: inherit;
+          width: 90%;
+          margin: auto;
+          padding: var(--small-space);
         }
 
         nav {
-            width: 100%;
-            background: var(--light-color);
-            display: flex;
-            justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
         }
 
         .nav-ul {
-            margin: 0;
-            padding-inline: var(--medium-space) 0;
-            display: flex;
-            justify-content: flex-start;
+          flex-direction: row;
         }
-
-        .nav-li {
-            margin-left: 0;
-            margin-right: var(--medium-space);
-        }
-
-        @media (max-width: 160px) {
-            .nav-ul {
-                display: none;
-            }
-        }
-
-        @media (max-width: 280px) {
-            .nav-ul {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-            }
-        }
-
-        li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <nav aria-label="main navigation">
-            <ul class="nav-ul">
-                <li class="nav-li">
-                    <a href="https://www.linkedin.com/in/josefmüller"><i class="fa-brands fa-linkedin"></i></a>
-                </li>
-                <li class="nav-li">
-                    <a href="https://www.xing.com/profile/Josef_Mueller253"><i class="fa-brands fa-square-xing"></i></a>
-                </li>
-                <li class="nav-li">
-                    <a href="https://github.com/am9zZWY"><i class="fa-brands fa-github"></i></a>
-                </li>
-            </ul>
-        </nav>
-        <section class="section" id="about" role="contentinfo" aria-label="section"
-            aria-labelledby="About Josef Müller">
-            <h1 class="greeting" aria-labelledby="greeting">
-                Hello!
+      <nav aria-label="main navigation">
+        <ul class="nav-ul">
+          <li class="nav-li">
+            <a href="https://www.linkedin.com/in/josefmüller">
+              <img src="/icons/linkedin.svg" />
+            </a>
+          </li>
+          <li class="nav-li">
+            <a href="https://www.xing.com/profile/Josef_Mueller253">
+              <img src="/icons/xing.svg" />
+            </a>
+          </li>
+          <li class="nav-li">
+            <a href="https://github.com/am9zZWY">
+              <img src="/icons/github.svg" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section
+        class="section"
+        id="about"
+        role="contentinfo"
+        aria-label="section"
+        aria-labelledby="About Josef Müller"
+      >
+        <h1 class="greeting" aria-labelledby="greeting">Hello!</h1>
+        <div class="container">
+          <div>
+            <h1 aria-labelledby="introduction" class="section-title">
+              My name is Josef Müller.
             </h1>
-            <div class="container">
-                <div>
-                    <h1 aria-labelledby="introduction" class="section-title">
-                        My name is Josef Müller.
-                    </h1>
 
-                    <p class="text">
-                        I'm currently pursuing a degree in <span class="keyword">Computer Science</span>. When I'm not
-                        in class, you can usually find me working on all sorts of small projects and getting my hands
-                        dirty with the latest tech trends. 😎
-                    </p>
-                    <p class="text">
-                        I'm super into frontend development, especially using frameworks like Vue and Svelte to
-                        create dynamic interfaces. Plus, I dabble in the backend too, using languages like Go,
-                        PHP and Java to make things come alive! 🚀
-                        Explore my projects on <span class="keyword"><a href="https://github.com/am9zZWY">GitHub</a></span> to see what I've been working on!
-                    </p>
-                    <p class="text">
-                        If you are interested in starting something with me or you have questions about a project feel
-                        free to contact me.
-                    </p>
-                </div>
-            </div>
-        </section>
+            <p class="text">
+              I’m studying <span class="keyword">Computer Science</span> at the
+              <a href="https://uni-tuebingen.de/">University of Tübingen</a>.
+              When I’m not in class, I enjoy working on various projects and
+              exploring the latest tech 😎
+            </p>
+            <p class="text">
+              I’m into frontend development, especially with Vue and React for
+              building cool interfaces. I also do some backend coding in Java,
+              Python, and C++. Check out my work on
+              <a href="https://github.com/am9zZWY" target="_blank">GitHub</a>!
+            </p>
+            <p class="text">
+              If you want to team up or have questions about a project, just
+              reach out!
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
